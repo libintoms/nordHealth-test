@@ -80,6 +80,26 @@ make report
 
 Note: the HTML report is generated only; it is not auto-opened.
 
+## Code Quality and Pre-commit Hooks
+
+This project uses the following tools to ensure code quality and consistency:
+
+- **Prettier**: For automatic code formatting. Run `npm run format` to format all files, or `npm run format:check` to check formatting.
+- **ESLint**: For JavaScript/TypeScript linting. Run `npm run lint` to check for lint errors.
+- **Husky**: Git hooks manager. A pre-commit hook is set up to automatically run Prettier (check) and ESLint before each commit. This prevents commits with formatting or lint errors.
+
+### How the Pre-commit Hook Works
+
+On every `git commit`, Husky will:
+
+1. Run `npm run format:check` to ensure code is formatted with Prettier.
+2. Run `npm run lint` to ensure there are no lint errors.
+3. If either step fails, the commit will be aborted.
+
+You can find the hook script in `.husky/pre-commit`.
+
+---
+
 ## Notes
 
 - This is a Python Playwright project, so there is no `playwright.config.ts`
