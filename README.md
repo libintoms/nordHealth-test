@@ -15,6 +15,7 @@ This project contains a Python `pytest-playwright` test suite for:
 ## Prerequisites
 
 - Python 3.10+ (tested here with Python 3.14)
+- Node.js 18+ (for Prettier, ESLint, and Husky Git hooks)
 
 ## Setup
 
@@ -24,13 +25,19 @@ This project contains a Python `pytest-playwright` test suite for:
 python3 -m venv .venv
 ```
 
-2. Install dependencies:
+2. Install Node.js tooling (from `package.json`):
+
+```bash
+npm install
+```
+
+3. Install Python dependencies:
 
 ```bash
 .venv/bin/python -m pip install -r requirements.txt
 ```
 
-3. Install Playwright browser binaries (Chromium only):
+4. Install Playwright browser binaries (Chromium only):
 
 ```bash
 .venv/bin/python -m playwright install chromium
